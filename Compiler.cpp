@@ -2,7 +2,6 @@
 
 void ReadUserCommands(const char* fname)
 {
-
     assert(fname != NULL);
 
     FILE* UserCommands = fopen(fname, "r");

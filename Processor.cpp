@@ -2,7 +2,6 @@
 
 void CPU(Stack* stack)
 {
-
     Verificator(stack);
 
     FILE* CPUCommands = fopen("CPUCommands.txt", "r");

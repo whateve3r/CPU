@@ -1,4 +1,4 @@
-#include "stackfunc.h"
+#include "Stackfunc.h"
 
 int StackConstruct(Stack* stack, int capacity)
 {

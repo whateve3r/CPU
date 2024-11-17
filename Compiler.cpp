@@ -6,9 +6,7 @@ int ReadUserCommands(const char* fname)
 
     FILE* UserCommands = fopen(fname, "r");
 
-    fseek(UserCommands, 0, SEEK_END);
-    size_t UserSize = (size_t)ftell(UserCommands);
-    rewind(UserCommands);
+    size_t UserSize = filesize(UserCommands);
 
     char* UserCommand = (char*)calloc(UserSize, sizeof(char));
 

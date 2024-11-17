@@ -1,4 +1,4 @@
-#include "consts.h"
+#include "Consts.h"
 #include "StackStruct.h"
 #include <stdio.h>
 #include <stdlib.h>

@@ -80,10 +80,18 @@ void PrintStack(const Stack* stack)
     printf("Stack size - %d\n", stack->size);
     printf("Stack capacity - %d\n", stack->capacity);
 
-    printf("Elements of stack:\n");
-
-    for (int i = 1; i < stack->size + 1; i++)
+    if (stack->size != 0)
     {
-        printf("%d - %lg\n", i,  stack->data[i]);
+        printf("Elements of stack:\n");
+
+        for (int i = 1; i < stack->size + 1; i++)
+        {
+            printf("%d - %lg\n", i,  stack->data[i]);
+        }
+    }
+
+    else
+    {
+        printf("Empty stack.\n");
     }
 }

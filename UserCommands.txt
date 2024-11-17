@@ -9,6 +9,7 @@ push 13
 mul
 push 999
 sum
+pop
 out
 hlt
 

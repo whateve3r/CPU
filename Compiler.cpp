@@ -24,19 +24,29 @@ void ReadUserCommands(const char* fname)
             fprintf(CPUCommands, "1 %lg\n", num);
         }
 
-        if (strcmp(UserCommand, "mul\n") == 0)
+        if (strcmp(UserCommand, "pop\n") == 0)
         {
             fprintf(CPUCommands, "2\n");
         }
 
-        if (strcmp(UserCommand, "div\n") == 0)
+        if (strcmp(UserCommand, "mul\n") == 0)
         {
             fprintf(CPUCommands, "3\n");
         }
 
-        if (strcmp(UserCommand, "sub\n") == 0)
+        if (strcmp(UserCommand, "div\n") == 0)
         {
             fprintf(CPUCommands, "4\n");
+        }
+
+        if (strcmp(UserCommand, "sum\n") == 0)
+        {
+            fprintf(CPUCommands, "5\n");
+        }
+
+        if (strcmp(UserCommand, "sub\n") == 0)
+        {
+            fprintf(CPUCommands, "6\n");
         }
 
         if (strcmp(UserCommand, "out\n") == 0)
@@ -47,11 +57,6 @@ void ReadUserCommands(const char* fname)
         if (strcmp(UserCommand, "hlt\n") == 0)
         {
             fprintf(CPUCommands, "-1\n");
-        }
-
-        if (strcmp(UserCommand, "sum\n") == 0)
-        {
-            fprintf(CPUCommands, "5\n");
         }
     }
 

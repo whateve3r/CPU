@@ -23,6 +23,11 @@ void CPU(Stack* stack)
                 break;
 
             case 2:
+                pop(stack);
+                QuantityOfPush--;
+                break;
+
+            case 3:
             {
                 double Elem1 = stack->data[QuantityOfPush];
                 double Elem2 = stack->data[QuantityOfPush - 1];
@@ -35,7 +40,7 @@ void CPU(Stack* stack)
                 break;
             }
 
-            case 3:
+            case 4:
             {
                 double Elem1 = stack->data[QuantityOfPush];
                 double Elem2 = stack->data[QuantityOfPush - 1];
@@ -48,19 +53,6 @@ void CPU(Stack* stack)
                break;
             }
 
-            case 4:
-            {
-                double Elem1 = stack->data[QuantityOfPush];
-                double Elem2 = stack->data[QuantityOfPush - 1];
-
-                pop(stack);
-                pop(stack);
-
-                push(stack, Elem2 - Elem1);
-                QuantityOfPush--;
-                break;
-            }
-
             case 5:
             {
                 double Elem1 = stack->data[QuantityOfPush];
@@ -70,6 +62,19 @@ void CPU(Stack* stack)
                 pop(stack);
 
                 push(stack, Elem2 + Elem1);
+                QuantityOfPush--;
+                break;
+            }
+
+            case 6:
+            {
+                double Elem1 = stack->data[QuantityOfPush];
+                double Elem2 = stack->data[QuantityOfPush - 1];
+
+                pop(stack);
+                pop(stack);
+
+                push(stack, Elem2 - Elem1);
                 QuantityOfPush--;
                 break;
             }

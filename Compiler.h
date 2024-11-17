@@ -4,5 +4,5 @@
 #include "Processor.h"
 #ifndef compiler
 #define compiler
-void ReadUserCommands(const char* fname);
+int ReadUserCommands(const char* fname);
 #endif

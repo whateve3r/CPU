@@ -1,6 +1,6 @@
 #include "Compiler.h"
 
-void ReadUserCommands(const char* fname)
+int ReadUserCommands(const char* fname)
 {
     assert(fname != NULL);
 
@@ -62,4 +62,6 @@ void ReadUserCommands(const char* fname)
     fclose(UserCommands);
     fclose(CPUCommands);
     free(UserCommand);
+
+    return SUCCESS;
 }

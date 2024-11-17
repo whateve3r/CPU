@@ -11,7 +11,7 @@ int StackConstruct(Stack* stack, int capacity)
 
     Verificator(stack);
 
-    return 0;
+    return SUCCESS;
 }
 
 int StackDestruct(Stack* stack)
@@ -35,7 +35,7 @@ int StackResize(Stack* stack)
 
     Verificator(stack);
 
-    return 0;
+    return SUCCESS;
 }
 
 int push(Stack* stack, const double value)
@@ -52,7 +52,7 @@ int push(Stack* stack, const double value)
 
     Verificator(stack);
 
-    return 0;
+    return SUCCESS;
 }
 
 stackElem pop(Stack* stack)
@@ -73,7 +73,7 @@ stackElem pop(Stack* stack)
 }
 
 
-void PrintStack(const Stack* stack)
+int PrintStack(const Stack* stack)
 {
     Verificator(stack);
 
@@ -94,4 +94,6 @@ void PrintStack(const Stack* stack)
     {
         printf("Empty stack.\n");
     }
+
+    return SUCCESS;
 }

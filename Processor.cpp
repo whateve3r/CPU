@@ -1,6 +1,6 @@
 #include "Processor.h"
 
-void CPU(Stack* stack)
+int CPU(Stack* stack)
 {
     Verificator(stack);
 
@@ -87,4 +87,6 @@ void CPU(Stack* stack)
 
     fclose(CPUCommands);
     StackDestruct(stack);
+
+    return SUCCESS;
 }

@@ -40,15 +40,17 @@ int StackCheck(const Stack* stack)
     return 0;
 }
 
-void StackDump(const Stack* stack)
+int StackDump(const Stack* stack)
 {
     PrintError(stack);
     printf("stack data - %p\n", stack->data);
     printf("stack capacity - %d\n", stack->capacity);
     printf("stack size - %d\n", stack->size);
+
+    return SUCCESS;
 }
 
-void PrintError(const Stack* stack)
+int PrintError(const Stack* stack)
 {
     int NumError = 0;
 
@@ -88,6 +90,8 @@ void PrintError(const Stack* stack)
     {
         printf("ERROR: LAST CANARY ERROR\n");
     }
+
+    return SUCCESS;
 }
 
 int Verificator(const Stack* stack)

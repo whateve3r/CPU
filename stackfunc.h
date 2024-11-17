@@ -12,5 +12,5 @@ int StackResize(Stack* stack);
 int push(Stack* stack, const double value);
 stackElem pop(Stack* stack);
 
-void PrintStack(const Stack* stack);
+int PrintStack(const Stack* stack);
 #endif

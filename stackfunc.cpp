@@ -16,11 +16,6 @@ int StackConstruct(Stack* stack, int capacity)
 
 int StackDestruct(Stack* stack)
 {
-    if (stack == NULL)
-    {
-        return NULL_POINTER;
-    }
-
     free(stack->data);
 
     stack->size = -1;
@@ -32,10 +27,7 @@ int StackDestruct(Stack* stack)
 
 int StackResize(Stack* stack)
 {
-    if (stack == NULL)
-    {
-        return NULL_POINTER;
-    }
+    Verificator(stack);
 
     stack->capacity *= MULTIPLIER;
     stack->data = (stackElem*)realloc(stack->data, ((size_t)stack->capacity+2) * sizeof(stackElem));
@@ -83,6 +75,8 @@ stackElem pop(Stack* stack)
 
 void PrintStack(const Stack* stack)
 {
+    Verificator(stack);
+
     printf("Stack size - %d\n", stack->size);
     printf("Stack capacity - %d\n", stack->capacity);
 

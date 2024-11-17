@@ -1,7 +1,10 @@
 #include "Processor.h"
 
-void CPU(Stack* MyStack)
+void CPU(Stack* stack)
 {
+
+    Verificator(stack);
+
     FILE* CPUCommands = fopen("CPUCommands.txt", "r");
 
     stackElem argument = 0;
@@ -15,64 +18,64 @@ void CPU(Stack* MyStack)
         {
             case 1:
                 fscanf(CPUCommands, "%lg", &argument);
-                push(MyStack, argument);
+                push(stack, argument);
                 QuantityOfPush++;
                 break;
 
             case 2:
             {
-                double Elem1 = MyStack->data[QuantityOfPush];
-                double Elem2 = MyStack->data[QuantityOfPush - 1];
+                double Elem1 = stack->data[QuantityOfPush];
+                double Elem2 = stack->data[QuantityOfPush - 1];
 
-                pop(MyStack);
-                pop(MyStack);
+                pop(stack);
+                pop(stack);
 
-                push(MyStack, Elem2 * Elem1);
+                push(stack, Elem2 * Elem1);
                 QuantityOfPush--;
                 break;
             }
 
             case 3:
             {
-                double Elem1 = MyStack->data[QuantityOfPush];
-                double Elem2 = MyStack->data[QuantityOfPush - 1];
+                double Elem1 = stack->data[QuantityOfPush];
+                double Elem2 = stack->data[QuantityOfPush - 1];
 
-                pop(MyStack);
-                pop(MyStack);
+                pop(stack);
+                pop(stack);
 
-                push(MyStack, Elem2 / Elem1);
+                push(stack, Elem2 / Elem1);
                 QuantityOfPush--;
                break;
             }
 
             case 4:
             {
-                double Elem1 = MyStack->data[QuantityOfPush];
-                double Elem2 = MyStack->data[QuantityOfPush - 1];
+                double Elem1 = stack->data[QuantityOfPush];
+                double Elem2 = stack->data[QuantityOfPush - 1];
 
-                pop(MyStack);
-                pop(MyStack);
+                pop(stack);
+                pop(stack);
 
-                push(MyStack, Elem2 - Elem1);
+                push(stack, Elem2 - Elem1);
                 QuantityOfPush--;
                 break;
             }
 
             case 5:
             {
-                double Elem1 = MyStack->data[QuantityOfPush];
-                double Elem2 = MyStack->data[QuantityOfPush - 1];
+                double Elem1 = stack->data[QuantityOfPush];
+                double Elem2 = stack->data[QuantityOfPush - 1];
 
-                pop(MyStack);
-                pop(MyStack);
+                pop(stack);
+                pop(stack);
 
-                push(MyStack, Elem2 + Elem1);
+                push(stack, Elem2 + Elem1);
                 QuantityOfPush--;
                 break;
             }
 
             case 0:
-                PrintStack(MyStack);
+                PrintStack(stack);
                 break;
 
             case -1:
@@ -83,6 +86,8 @@ void CPU(Stack* MyStack)
         }
     }
 
+    Verificator(stack);
+
     fclose(CPUCommands);
-    StackDestruct(MyStack);
+    StackDestruct(stack);
 }

@@ -5,7 +5,7 @@ int StackCheck(const Stack* stack)
     if (stack == NULL)
     {
         fprintf(stderr, "ERROR: STACK POINTER IS NULL\n");
-        assert(0);
+        return NULL_POINTER;
     }
 
     if (stack->data == NULL)
@@ -58,10 +58,20 @@ int StackDump(const Stack* stack)
 
 int Verificator(const Stack* stack)
 {
-    if (StackCheck(stack) != SUCCESS)
+    int CheckStatus = StackCheck(stack);
+
+    if (CheckStatus != SUCCESS)
     {
-        StackDump(stack);
-        assert(0);
+        if (CheckStatus == NULL_POINTER)
+        {
+            assert(0);
+        }
+
+        else
+        {
+            StackDump(stack);
+            assert(0);
+        }
     }
 
     return SUCCESS;

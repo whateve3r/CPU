@@ -3,7 +3,7 @@
 int StackConstruct(Stack* stack, int capacity)
 {
     assert(stack != NULL);
-    assert(capacity > 0);
+    assert(capacity >= 0);
 
     stack->data = (stackElem*)calloc((size_t)capacity+2, sizeof(stackElem));
 
@@ -80,7 +80,7 @@ int PrintStack(const Stack* stack)
 {
     Verificator(stack);
 
-    printf("stack data - %p\n", stack->data);
+    printf("Stack data - %p\n", stack->data);
     printf("Stack capacity - %d\n", stack->capacity);
     printf("Stack size - %d\n", stack->size);
 

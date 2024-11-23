@@ -1,15 +1,4 @@
-push 228
-push 1337
-mul
-push 1488
-div
-push 666
-sub
-push 13
-mul
-push 999
-sum
-pop
+push 1
 out
 hlt
 

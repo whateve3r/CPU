@@ -2,6 +2,9 @@
 
 int StackConstruct(Stack* stack, int capacity)
 {
+    assert(stack != NULL);
+    assert(capacity > 0);
+
     stack->data = (stackElem*)calloc((size_t)capacity+2, sizeof(stackElem));
 
     stack->size = 0;
@@ -77,8 +80,9 @@ int PrintStack(const Stack* stack)
 {
     Verificator(stack);
 
-    printf("Stack size - %d\n", stack->size);
+    printf("stack data - %p\n", stack->data);
     printf("Stack capacity - %d\n", stack->capacity);
+    printf("Stack size - %d\n", stack->size);
 
     if (stack->size != 0)
     {

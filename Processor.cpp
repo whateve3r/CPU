@@ -79,7 +79,7 @@ int CPU(Stack* stack)
                 break;
 
             default:
-                printf("SWITCH ERROR\n");
+                fprintf(stderr, "SWITCH ERROR\n");
         }
     }
 

@@ -3,7 +3,7 @@
 
 int main()
 {
-    Stack MyStack;
+    Stack MyStack = {};
 
     StackConstruct(&MyStack, 5);
 

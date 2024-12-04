@@ -9,8 +9,8 @@ int StackConstruct(Stack* stack, int capacity);
 int StackDestruct(Stack* stack);
 int StackResize(Stack* stack);
 
-int push(Stack* stack, const double value);
-stackElem pop(Stack* stack);
+int Push(Stack* stack, const double value);
+stackElem Pop(Stack* stack);
 
 int PrintStack(const Stack* stack);
 #endif

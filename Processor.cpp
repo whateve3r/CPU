@@ -14,68 +14,68 @@ int CPU(Stack* stack)
     {
         switch(NumberOfCommand)
         {
-            case 1:
+            case PUSH:
                 fscanf(CPUCommands, "%lg", &argument);
-                push(stack, argument);
+                Push(stack, argument);
                 break;
 
-            case 2:
-                pop(stack);
+            case POP:
+                Pop(stack);
                 break;
 
-            case 3:
+            case MUL:
             {
                 double Elem1 = stack->data[stack->size];
                 double Elem2 = stack->data[stack->size - 1];
 
-                pop(stack);
-                pop(stack);
+                Pop(stack);
+                Pop(stack);
 
-                push(stack, Elem2 * Elem1);
+                Push(stack, Elem2 * Elem1);
                 break;
             }
 
-            case 4:
+            case DIV:
             {
                 double Elem1 = stack->data[stack->size];
                 double Elem2 = stack->data[stack->size - 1];
 
-                pop(stack);
-                pop(stack);
+                Pop(stack);
+                Pop(stack);
 
-                push(stack, Elem2 / Elem1);
+                Push(stack, Elem2 / Elem1);
                break;
             }
 
-            case 5:
+            case SUM:
             {
                 double Elem1 = stack->data[stack->size];
                 double Elem2 = stack->data[stack->size - 1];
 
-                pop(stack);
-                pop(stack);
+                Pop(stack);
+                Pop(stack);
 
-                push(stack, Elem2 + Elem1);
+                Push(stack, Elem2 + Elem1);
                 break;
             }
 
-            case 6:
+            case SUB:
             {
                 double Elem1 = stack->data[stack->size];
                 double Elem2 = stack->data[stack->size - 1];
 
-                pop(stack);
-                pop(stack);
+                Pop(stack);
+                Pop(stack);
 
-                push(stack, Elem2 - Elem1);
+                Push(stack, Elem2 - Elem1);
                 break;
             }
 
-            case 0:
+            case OUT:
                 PrintStack(stack);
                 break;
 
-            case -1:
+            case HLT:
                 break;
 
             default:

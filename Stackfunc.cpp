@@ -41,7 +41,7 @@ int StackResize(Stack* stack)
     return SUCCESS;
 }
 
-int push(Stack* stack, const double value)
+int Push(Stack* stack, const double value)
 {
     Verificator(stack);
 
@@ -58,7 +58,7 @@ int push(Stack* stack, const double value)
     return SUCCESS;
 }
 
-stackElem pop(Stack* stack)
+stackElem Pop(Stack* stack)
 {
     stackElem value = 0;
 

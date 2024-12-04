@@ -1,4 +1,4 @@
-enum Errors
+enum ErrorCodes
 {
     STACK_OVERFLOW = 100,
     STACK_UNDERFLOW = 101,
@@ -11,11 +11,26 @@ enum Errors
 
     NEGATIVE_SIZE = 106,
     NEGATIVE_CAPACITY = 107,
+
+    SUCCESS = 108
 };
 
-enum Consts
+enum Canary
 {
-    SUCCESS = 108,
     FIRST_CANARY = 0xAB0BA,
     LAST_CANARY = 0xDEDAB0BA
+};
+
+enum Commands
+{
+        OUT = 0,
+        HLT = -1,
+
+        PUSH = 1,
+        POP = 2,
+
+        MUL = 3,
+        DIV = 4,
+        SUM = 5,
+        SUB = 6
 };
